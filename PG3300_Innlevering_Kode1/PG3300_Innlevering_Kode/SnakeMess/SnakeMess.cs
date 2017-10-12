@@ -8,7 +8,6 @@ namespace SnakeMess
 {
 	class Position
 	{
-		public const string Ok = "Ok";
 
 		public int x; public int y;
 		public Position(int x = 0, int y = 0)
@@ -20,7 +19,7 @@ namespace SnakeMess
             x = input.x; y = input.y;
         }
 	}
-	// Stuff
+
 	class SnakeMess
 	{
 		public static void Main(string[] arguments)
