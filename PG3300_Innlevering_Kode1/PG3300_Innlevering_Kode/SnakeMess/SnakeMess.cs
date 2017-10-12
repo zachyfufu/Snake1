@@ -136,15 +136,21 @@ namespace SnakeMess
 					}
 					if (!gg) {
 						Console.ForegroundColor = ConsoleColor.Yellow;
-						Console.SetCursorPosition(head.x, head.y); Console.Write("0");
+						Console.SetCursorPosition(head.x, head.y);
+                        Console.Write("0");
 						if (!inUse) {
-							Console.SetCursorPosition(tail.x, tail.y); Console.Write(" ");
+							Console.SetCursorPosition(tail.x, tail.y);
+                            Console.Write(" ");
 						} else {
-							Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(pos.x, pos.y); Console.Write("$");
+							Console.ForegroundColor = ConsoleColor.Green;
+                            Console.SetCursorPosition(pos.x, pos.y);
+                            Console.Write("$");
 							inUse = false;
 						}
 						snake.Add(newH);
-						Console.ForegroundColor = ConsoleColor.Yellow; Console.SetCursorPosition(newH.x, newH.y); Console.Write("@");
+						Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.SetCursorPosition(newH.x, newH.y);
+                        Console.Write("@");
 						last = newDir;
 					}
 				}
