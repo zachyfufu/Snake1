@@ -11,7 +11,7 @@ using System.Diagnostics;
 //          I had a lot of fun obfuscating this code! And I can now (proudly?) say that this is the uggliest short piece of code I've ever written!
 //          (And yes, it could have been ugglier. But the idea wasn't to make it fuggly-uggly, just funny-uggly or sweet-uggly.)
 //
-//          -Tomas
+//          -ZACHY!!
 //
 namespace SnakeMess
 {
