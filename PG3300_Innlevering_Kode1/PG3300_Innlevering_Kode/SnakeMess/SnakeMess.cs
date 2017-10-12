@@ -105,35 +105,50 @@ namespace SnakeMess
 						dead = true;
 					else if (newH.y < 0 || newH.y >= boardH)
 						dead = true;
-					if (newH.x == pos.x && newH.y == pos.y) {
-						if (snake.Count + 1 >= boardW * boardH)
-							// No more room to place apples - game over.
-							dead = true;
-						else {
-							while (true) {
-								pos.x = rnd.Next(0, boardW); pos.y = rnd.Next(0, boardH);
-								bool found = true;
-								foreach (Position i in snake)
-									if (i.x == pos.x && i.y == pos.y) {
-										found = false;
-										break;
-									}
-								if (found) {
-									inUse = true;
-									break;
-								}
-							}
-						}
+					if (newH.x == pos.x && newH.y == pos.y)
+                    {
+                        if (snake.Count + 1 >= boardW * boardH)
+                        {
+                            // No more room to place apples - game over.
+                            dead = true;
+                        }
+                        else
+                        {
+                            while (true)
+                            {
+                                pos.x = rnd.Next(0, boardW);
+                                pos.y = rnd.Next(0, boardH);
+                                bool found = true;
+                                foreach (Position i in snake)
+                                {
+                                    if (i.x == pos.x && i.y == pos.y)
+                                    {
+                                        found = false;
+                                        break;
+                                    }
+                                }
+                                if (found)
+                                {
+                                    inUse = true;
+                                    break;
+                                }
+                            }
+                        }
 					}
+
 					if (!inUse) {
 						snake.RemoveAt(0);
-						foreach (Position x in snake)
-							if (x.x == newH.x && x.y == newH.y) {
-								// Death by accidental self-cannibalism.
-								dead = true;
-								break;
-							}
+                        foreach (Position x in snake)
+                        {
+                            if (x.x == newH.x && x.y == newH.y)
+                            {
+                                // Death by accidental self-cannibalism.
+                                dead = true;
+                                break;
+                            }
+                        }
 					}
+
 					if (!dead)
                     {
 						Console.ForegroundColor = ConsoleColor.Yellow;
@@ -144,7 +159,8 @@ namespace SnakeMess
                         {
 							Console.SetCursorPosition(tail.x, tail.y);
                             Console.Write(" ");
-						} else
+						}
+                        else
                         {
 							Console.ForegroundColor = ConsoleColor.Green;
                             Console.SetCursorPosition(pos.x, pos.y);
