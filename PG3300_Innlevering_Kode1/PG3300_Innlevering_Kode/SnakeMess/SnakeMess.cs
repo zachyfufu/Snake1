@@ -25,24 +25,30 @@ namespace SnakeMess
 	{
 		public static void Main(string[] arguments)
 		{
-
             Console.Title = "Westerdals Oslo ACT - SNAKE";
 
             bool gg = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
-			int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
-			Random rnd = new Random();
+            int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
+
 			Position pos = new Position();
-			List<Position> snake = new List<Position>();
+            List<Position> snake = new List<Position>();
 			snake.Add(new Position(10, 10));
             snake.Add(new Position(10, 10));
             snake.Add(new Position(10, 10));
             snake.Add(new Position(10, 10));
+
 			Console.CursorVisible = false;
-			Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(10, 10); Console.Write("@");
-			while (true) {
-				pos.x = rnd.Next(0, boardW); pos.y = rnd.Next(0, boardH);
+			Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(10, 10);
+            Console.Write("@");
+
+            Random rnd = new Random();
+
+            while (true) {
+				pos.x = rnd.Next(0, boardW);
+                pos.y = rnd.Next(0, boardH);
 				bool spot = true;
 				foreach (Position i in snake)
 					if (i.x == pos.x && i.y == pos.y) {
@@ -50,7 +56,9 @@ namespace SnakeMess
 						break;
 					}
 				if (spot) {
-					Console.ForegroundColor = ConsoleColor.Green; Console.SetCursorPosition(pos.x, pos.y); Console.Write("$");
+					Console.ForegroundColor = ConsoleColor.Green;
+                    Console.SetCursorPosition(pos.x, pos.y);
+                    Console.Write("$");
 					break;
 				}
 			}
