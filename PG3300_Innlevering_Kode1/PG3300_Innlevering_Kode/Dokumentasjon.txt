@@ -1,0 +1,5 @@
+
+Veivalg:
+
+
+1) Brannslokking: Endre variabelnavn og linjeskift for å få oversikt over hva som skjer
