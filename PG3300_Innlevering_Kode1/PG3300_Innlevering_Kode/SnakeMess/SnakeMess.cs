@@ -9,7 +9,8 @@ namespace SnakeMess
 	class Position
 	{
 
-		public int x; public int y;
+		public int x, y;
+
 		public Position(int x = 0, int y = 0)
         {
             this.x = x; this.y = y;
@@ -133,19 +134,24 @@ namespace SnakeMess
 								break;
 							}
 					}
-					if (!dead) {
+					if (!dead)
+                    {
 						Console.ForegroundColor = ConsoleColor.Yellow;
 						Console.SetCursorPosition(head.x, head.y);
                         Console.Write("0");
-						if (!inUse) {
+
+						if (!inUse)
+                        {
 							Console.SetCursorPosition(tail.x, tail.y);
                             Console.Write(" ");
-						} else {
+						} else
+                        {
 							Console.ForegroundColor = ConsoleColor.Green;
                             Console.SetCursorPosition(pos.x, pos.y);
                             Console.Write("$");
 							inUse = false;
 						}
+
 						snake.Add(newH);
 						Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.SetCursorPosition(newH.x, newH.y);
