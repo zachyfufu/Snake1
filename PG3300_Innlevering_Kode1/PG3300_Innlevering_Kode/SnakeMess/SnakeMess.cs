@@ -30,9 +30,14 @@ namespace SnakeMess
             bool dead = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
-            int boardW = Console.WindowWidth;
-            int boardH = Console.WindowHeight;
+           /* int boardW = Console.WindowWidth;
+            int boardH = Console.WindowHeight;*/ 
 
+           Window win = new Window();
+
+            
+
+            
 			Position pos = new Position();
             List<Position> snake = new List<Position>();
 			snake.Add(new Position(10, 10));
@@ -45,8 +50,8 @@ namespace SnakeMess
             Random rnd = new Random();
 
             while (true) {
-				pos.x = rnd.Next(0, boardW);
-                pos.y = rnd.Next(0, boardH);
+				pos.x = rnd.Next(0, win.BoardW);
+                pos.y = rnd.Next(0, win.BoardH);
 				bool spot = true;
 				foreach (Position i in snake)
 					if (i.x == pos.x && i.y == pos.y) {
@@ -79,7 +84,7 @@ namespace SnakeMess
 						newDir = 3;
 				}
 				if (!pause) {
-					if (t.ElapsedMilliseconds < 100)
+					if (t.ElapsedMilliseconds < 400)
 						continue;
 					t.Restart();
 					Position tail = new Position(snake.First());
@@ -99,13 +104,13 @@ namespace SnakeMess
 							newH.x -= 1;
 							break;
 					}
-					if (newH.x < 0 || newH.x >= boardW)
+					if (newH.x < 0 || newH.x >= win.BoardW)
 						dead = true;
-					else if (newH.y < 0 || newH.y >= boardH)
+					else if (newH.y < 0 || newH.y >= win.BoardH)
 						dead = true;
 					if (newH.x == pos.x && newH.y == pos.y)
                     {
-                        if (snake.Count + 1 >= boardW * boardH)
+                        if (snake.Count + 1 >= win.BoardW * win.BoardH)
                         {
                             // No more room to place apples - game over.
                             dead = true;
@@ -114,8 +119,8 @@ namespace SnakeMess
                         {
                             while (true)
                             {
-                                pos.x = rnd.Next(0, boardW);
-                                pos.y = rnd.Next(0, boardH);
+                                pos.x = rnd.Next(0, win.BoardW);
+                                pos.y = rnd.Next(0, win.BoardH);
                                 bool found = true;
                                 foreach (Position i in snake)
                                 {
