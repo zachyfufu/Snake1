@@ -29,22 +29,11 @@ namespace SnakeMess
             snake.Add(new Position(10, 10));
 
 			Console.CursorVisible = false;
-
+            
             Random rnd = new Random();
 
             while (true) {
-<<<<<<< HEAD
-
-                Food food = new Food(); 
-
-              
-                
-				pos.x = rnd.Next(0, boardW);
-                pos.y = rnd.Next(0, boardH);
-=======
-				pos.x = rnd.Next(0, win.BoardW);
-                pos.y = rnd.Next(0, win.BoardH);
->>>>>>> parent of 248dc12... Merge branch 'master' of https://github.com/zachyfufu/Snake1
+            
 				bool spot = true;
 				foreach (Position i in snake)
 					if (i.x == pos.x && i.y == pos.y) {

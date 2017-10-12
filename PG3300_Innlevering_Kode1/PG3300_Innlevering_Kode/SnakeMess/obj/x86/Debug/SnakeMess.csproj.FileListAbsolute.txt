@@ -25,3 +25,5 @@ C:\Users\Wilma\Desktop\Slange\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering
 C:\Users\Wilma\Desktop\Slange\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.csproj.CoreCompileInputs.cache
 C:\Users\Wilma\Desktop\Slange\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.exe
 C:\Users\Wilma\Desktop\Slange\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.pdb
+C:\Users\Wilma\Desktop\Slange\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\bin\Debug\SnakeMess.exe
+C:\Users\Wilma\Desktop\Slange\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\bin\Debug\SnakeMess.pdb
