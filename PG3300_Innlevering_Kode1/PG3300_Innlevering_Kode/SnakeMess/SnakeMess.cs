@@ -11,8 +11,14 @@ namespace SnakeMess
 		public const string Ok = "Ok";
 
 		public int x; public int y;
-		public Position(int x = 0, int y = 0) { this.x = x; this.y = y; }
-		public Position(Position inputPos) { x = inputPos.x; y = inputPos.y; }
+		public Position(int x = 0, int y = 0)
+        {
+            this.x = x; this.y = y;
+        }
+		public Position(Position input)
+        {
+            x = input.x; y = input.y;
+        }
 	}
 	// Stuff
 	class SnakeMess
