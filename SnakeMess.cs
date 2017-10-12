@@ -39,6 +39,9 @@ namespace SnakeMess
             snake.Add(new Point(10, 10));
             snake.Add(new Point(10, 10));
             snake.Add(new Point(10, 10));
+
+            // Jeg har forandret det
+
 			Console.CursorVisible = true;
 			Console.Title = "Westerdals Oslo ACT - SNAKE";
 			Console.ForegroundColor = ConsoleColor.Green;
