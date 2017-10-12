@@ -15,3 +15,9 @@ C:\Users\Wilma\Downloads\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeM
 C:\Users\Wilma\Downloads\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.csproj.CoreCompileInputs.cache
 C:\Users\Wilma\Downloads\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.exe
 C:\Users\Wilma\Downloads\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.pdb
+C:\Users\svettleif\Documents\GitHub\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.csprojResolveAssemblyReference.cache
+C:\Users\svettleif\Documents\GitHub\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.csproj.CoreCompileInputs.cache
+C:\Users\svettleif\Documents\GitHub\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.exe
+C:\Users\svettleif\Documents\GitHub\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\obj\x86\Debug\SnakeMess.pdb
+C:\Users\svettleif\Documents\GitHub\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\bin\Debug\SnakeMess.exe
+C:\Users\svettleif\Documents\GitHub\Snake1\PG3300_Innlevering_Kode1\PG3300_Innlevering_Kode\SnakeMess\bin\Debug\SnakeMess.pdb
