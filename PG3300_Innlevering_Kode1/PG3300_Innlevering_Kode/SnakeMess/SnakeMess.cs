@@ -23,7 +23,7 @@ namespace SnakeMess
 		public Point(int x = 0, int y = 0) { X = x; Y = y; }
 		public Point(Point input) { X = input.X; Y = input.Y; }
 	}
-
+	// Stuff
 	class SnakeMess
 	{
 		public static void Main(string[] arguments)
