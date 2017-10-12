@@ -6,43 +6,22 @@ using System.Diagnostics;
 
 namespace SnakeMess
 {
-	class Position
-	{
-
-		public int x, y;
-
-		public Position(int x = 0, int y = 0)
-        {
-            this.x = x; this.y = y;
-        }
-		public Position(Position input)
-        {
-            x = input.x; y = input.y;
-        }
-	}
+	
 
 	class SnakeMess
 	{
 		public static void Main(string[] arguments)
 		{
             Console.Title = "Westerdals Oslo ACT - SNAKE";
-
             bool dead = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
-<<<<<<< HEAD
-           /* int boardW = Console.WindowWidth;
-            int boardH = Console.WindowHeight;*/ 
-=======
-            int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
->>>>>>> 2b9fc409cca7f2d8bb4801d5aa8aab71a3ef0b06
+           
 
            Window win = new Window();
+           Position pos = new Position();
 
             
-
-            
-			Position pos = new Position();
             List<Position> snake = new List<Position>();
 			snake.Add(new Position(10, 10));
             snake.Add(new Position(10, 10));
@@ -50,9 +29,6 @@ namespace SnakeMess
             snake.Add(new Position(10, 10));
 
 			Console.CursorVisible = false;
-			Console.ForegroundColor = ConsoleColor.Green;
-            Console.SetCursorPosition(10, 10);
-            Console.Write("@");
 
             Random rnd = new Random();
 

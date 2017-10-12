@@ -7,6 +7,8 @@ namespace SnakeMess
 {
     class Window
     {
+        Position pos = new Position();
+
         public int BoardW
         { get; set; } = Console.WindowWidth;
 
