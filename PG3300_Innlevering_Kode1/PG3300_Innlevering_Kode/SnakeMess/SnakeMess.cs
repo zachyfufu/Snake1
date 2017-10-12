@@ -27,7 +27,7 @@ namespace SnakeMess
 		{
             Console.Title = "Westerdals Oslo ACT - SNAKE";
 
-            bool gg = false, pause = false, inUse = false;
+            bool dead = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
             int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
@@ -62,14 +62,13 @@ namespace SnakeMess
 					break;
 				}
 			}
-            Stopwatch t = new Stopwatch();
-
-            t.Start();
-			while (!gg) {
+			Stopwatch t = new Stopwatch();
+			t.Start();
+			while (!dead) {
 				if (Console.KeyAvailable) {
 					ConsoleKeyInfo cki = Console.ReadKey(true);
 					if (cki.Key == ConsoleKey.Escape)
-						gg = true;
+						dead = true;
 					else if (cki.Key == ConsoleKey.Spacebar)
 						pause = !pause;
 					else if (cki.Key == ConsoleKey.UpArrow && last != 2)
@@ -81,11 +80,8 @@ namespace SnakeMess
 					else if (cki.Key == ConsoleKey.LeftArrow && last != 1)
 						newDir = 3;
 				}
-
-
-                if (!pause) {
-
-                    if (t.ElapsedMilliseconds < 100)
+				if (!pause) {
+					if (t.ElapsedMilliseconds < 100)
 						continue;
 					t.Restart();
 					Position tail = new Position(snake.First());
@@ -105,71 +101,52 @@ namespace SnakeMess
 							newH.x -= 1;
 							break;
 					}
-
 					if (newH.x < 0 || newH.x >= boardW)
-						gg = true;
+						dead = true;
 					else if (newH.y < 0 || newH.y >= boardH)
-						gg = true;
+						dead = true;
 					if (newH.x == pos.x && newH.y == pos.y) {
 						if (snake.Count + 1 >= boardW * boardH)
 							// No more room to place apples - game over.
-							gg = true;
-						else
-                        {
+							dead = true;
+						else {
 							while (true) {
-
-                                pos.x = rnd.Next(0, boardW); pos.y = rnd.Next(0, boardH);
+								pos.x = rnd.Next(0, boardW); pos.y = rnd.Next(0, boardH);
 								bool found = true;
-
-                                foreach (Position i in snake)
-                                {
-                                    if (i.x == pos.x && i.y == pos.y)
-                                    {
-                                        found = false;
-                                        break;
-                                    }
-                                }
-								if (found)
-                                {
+								foreach (Position i in snake)
+									if (i.x == pos.x && i.y == pos.y) {
+										found = false;
+										break;
+									}
+								if (found) {
 									inUse = true;
 									break;
 								}
 							}
 						}
 					}
-
-                    if (!inUse)
-                    {
-                        snake.RemoveAt(0);
-                        foreach (Position x in snake)
-                        {
-                            if (x.x == newH.x && x.y == newH.y)
-                            {
-                                // Death by accidental self-cannibalism.
-                                gg = true;
-                                break;
-                            }
-                        }
-                    }
-
-					if (!gg)
-                    {
+					if (!inUse) {
+						snake.RemoveAt(0);
+						foreach (Position x in snake)
+							if (x.x == newH.x && x.y == newH.y) {
+								// Death by accidental self-cannibalism.
+								dead = true;
+								break;
+							}
+					}
+					if (!dead) {
 						Console.ForegroundColor = ConsoleColor.Yellow;
 						Console.SetCursorPosition(head.x, head.y);
                         Console.Write("0");
-						if (!inUse)
-                        {
+						if (!inUse) {
 							Console.SetCursorPosition(tail.x, tail.y);
                             Console.Write(" ");
-						}
-                        else
-                        {
+						} else {
 							Console.ForegroundColor = ConsoleColor.Green;
                             Console.SetCursorPosition(pos.x, pos.y);
                             Console.Write("$");
 							inUse = false;
 						}
-
 						snake.Add(newH);
 						Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.SetCursorPosition(newH.x, newH.y);
