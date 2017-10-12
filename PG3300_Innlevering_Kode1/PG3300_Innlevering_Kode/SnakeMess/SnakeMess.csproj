@@ -43,8 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+=======
+    <Compile Include="Food.cs" />
+>>>>>>> dcc9ece889ee075e45a6547d98884623789b4218
     <Compile Include="SnakeMess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
