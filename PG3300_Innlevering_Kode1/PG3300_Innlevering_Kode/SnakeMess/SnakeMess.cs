@@ -47,7 +47,12 @@ namespace SnakeMess
             Random rnd = new Random();
 
             while (true) {
-				pos.x = rnd.Next(0, boardW);
+
+                Food food = new Food(); 
+
+              
+                
+				/*pos.x = rnd.Next(0, boardW);
                 pos.y = rnd.Next(0, boardH);
 				bool spot = true;
 				foreach (Position i in snake)
@@ -60,7 +65,7 @@ namespace SnakeMess
                     Console.SetCursorPosition(pos.x, pos.y);
                     Console.Write("$");
 					break;
-				}
+				}*/
 			}
 			Stopwatch t = new Stopwatch();
 			t.Start();
