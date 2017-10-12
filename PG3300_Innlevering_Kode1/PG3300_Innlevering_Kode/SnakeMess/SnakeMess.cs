@@ -30,8 +30,12 @@ namespace SnakeMess
             bool dead = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
+<<<<<<< HEAD
            /* int boardW = Console.WindowWidth;
             int boardH = Console.WindowHeight;*/ 
+=======
+            int boardW = Console.WindowWidth, boardH = Console.WindowHeight;
+>>>>>>> 2b9fc409cca7f2d8bb4801d5aa8aab71a3ef0b06
 
            Window win = new Window();
 
@@ -46,6 +50,9 @@ namespace SnakeMess
             snake.Add(new Position(10, 10));
 
 			Console.CursorVisible = false;
+			Console.ForegroundColor = ConsoleColor.Green;
+            Console.SetCursorPosition(10, 10);
+            Console.Write("@");
 
             Random rnd = new Random();
 
