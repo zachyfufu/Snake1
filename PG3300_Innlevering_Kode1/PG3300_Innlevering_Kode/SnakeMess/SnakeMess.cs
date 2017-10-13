@@ -34,13 +34,13 @@ namespace SnakeMess
 
             while (true) {
             
-				bool spot = true;
+				bool food = true;
 				foreach (Position i in snake)
 					if (i.x == pos.x && i.y == pos.y) {
-						spot = false;
+						food = false;
 						break;
 					}
-				if (spot) {
+				if (food) {
 					Console.ForegroundColor = ConsoleColor.Green;
                     Console.SetCursorPosition(pos.x, pos.y);
                     Console.Write("$");
