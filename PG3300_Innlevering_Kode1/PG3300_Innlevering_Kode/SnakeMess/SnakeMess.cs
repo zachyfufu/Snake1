@@ -74,7 +74,7 @@ namespace SnakeMess
 							break;
 					}
 
-                    
+                    death.DeathOptions();
 
 
                     /*
@@ -112,6 +112,7 @@ namespace SnakeMess
                             }
                         }
 					}
+
 
 					if (!inUse) {
 						win.list.RemoveAt(0);

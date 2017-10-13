@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SnakeMess
 {
-    class End : SnakeMess
+    class End : Window
     {
         bool inUse = false;
         bool dead = false;
