@@ -66,7 +66,7 @@ namespace SnakeMess
 						newDir = 3;
 				}
 				if (!pause) {
-					if (t.ElapsedMilliseconds < 400)
+					if (t.ElapsedMilliseconds < 50)
 						continue;
 					t.Restart();
 					Position tail = new Position(snake.First());
@@ -100,7 +100,7 @@ namespace SnakeMess
                         else
                         {
                             while (true)
-                            {
+                            {  // Koden for at maten ikke skal 
                                 pos.x = rnd.Next(0, win.BoardW);
                                 pos.y = rnd.Next(0, win.BoardH);
                                 bool found = true;
@@ -114,7 +114,7 @@ namespace SnakeMess
                                 }
                                 if (found)
                                 {
-                                    inUse = true;
+                                    inUse = false;
                                     break;
                                 }
                             }
