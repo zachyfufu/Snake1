@@ -9,6 +9,8 @@ namespace SnakeMess
     {
 
         public int x, y;
+      //  public List<Position> list;
+
 
         public Position(int x = 0, int y = 0)
         {
@@ -18,5 +20,7 @@ namespace SnakeMess
         {
             x = input.x; y = input.y;
         }
+
+         
     }
 }

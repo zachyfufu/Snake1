@@ -10,43 +10,28 @@ namespace SnakeMess
 
 	class SnakeMess
 	{
-		public static void Main(string[] arguments)
+
+
+        public static void Main(string[] arguments)
 		{
             Console.Title = "Westerdals Oslo ACT - SNAKE";
+
             bool dead = false, pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
            
 
-           Window win = new Window();
-           Position pos = new Position();
+            Window win = new Window();
+            Position pos = new Position();
 
-            
-            List<Position> snake = new List<Position>();
-			snake.Add(new Position(10, 10));
-            snake.Add(new Position(10, 10));
-            snake.Add(new Position(10, 10));
-            snake.Add(new Position(10, 10));
 
+          
 			Console.CursorVisible = false;
             
             Random rnd = new Random();
+            win.Snake();
+            win.Food();
 
-            while (true) {
-            
-				bool food = true;
-				foreach (Position i in snake)
-					if (i.x == pos.x && i.y == pos.y) {
-						food = false;
-						break;
-					}
-				if (food) {
-					Console.ForegroundColor = ConsoleColor.Green;
-                    Console.SetCursorPosition(pos.x, pos.y);
-                    Console.Write("$");
-					break;
-				}
-			}
 			Stopwatch t = new Stopwatch();
 			t.Start();
 			while (!dead) {
@@ -69,8 +54,8 @@ namespace SnakeMess
 					if (t.ElapsedMilliseconds < 400)
 						continue;
 					t.Restart();
-					Position tail = new Position(snake.First());
-					Position head = new Position(snake.Last());
+					Position tail = new Position(win.list.First());
+					Position head = new Position(win.list.Last());
 					Position newH = new Position(head);
 					switch (newDir) {
 						case 0:
@@ -92,7 +77,7 @@ namespace SnakeMess
 						dead = true;
 					if (newH.x == pos.x && newH.y == pos.y)
                     {
-                        if (snake.Count + 1 >= win.BoardW * win.BoardH)
+                        if (win.list.Count + 1 >= win.BoardW * win.BoardH)
                         {
                             // No more room to place apples - game over.
                             dead = true;
@@ -104,7 +89,7 @@ namespace SnakeMess
                                 pos.x = rnd.Next(0, win.BoardW);
                                 pos.y = rnd.Next(0, win.BoardH);
                                 bool found = true;
-                                foreach (Position i in snake)
+                                foreach (Position i in win.list)
                                 {
                                     if (i.x == pos.x && i.y == pos.y)
                                     {
@@ -122,8 +107,8 @@ namespace SnakeMess
 					}
 
 					if (!inUse) {
-						snake.RemoveAt(0);
-                        foreach (Position x in snake)
+						win.list.RemoveAt(0);
+                        foreach (Position x in win.list)
                         {
                             if (x.x == newH.x && x.y == newH.y)
                             {
@@ -153,7 +138,7 @@ namespace SnakeMess
 							inUse = false;
 						}
 
-						snake.Add(newH);
+						win.list.Add(newH);
 						Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.SetCursorPosition(newH.x, newH.y);
                         Console.Write("@");
