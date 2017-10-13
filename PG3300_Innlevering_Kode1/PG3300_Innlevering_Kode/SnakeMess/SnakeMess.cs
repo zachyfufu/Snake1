@@ -100,7 +100,7 @@ namespace SnakeMess
                         else
                         {
                             while (true)
-                            {  // Koden for at maten ikke skal 
+                            {  
                                 pos.x = rnd.Next(0, win.BoardW);
                                 pos.y = rnd.Next(0, win.BoardH);
                                 bool found = true;
