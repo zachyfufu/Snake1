@@ -16,13 +16,15 @@ namespace SnakeMess
 		{
             Console.Title = "Westerdals Oslo ACT - SNAKE";
 
-            bool dead = false, pause = false, inUse = false;
+            bool dead = false, pause = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
            
 
             Window win = new Window();
             Position pos = new Position();
+            End death = new End();
+            
 
 
           
@@ -51,7 +53,7 @@ namespace SnakeMess
 						newDir = 3;
 				}
 				if (!pause) {
-					if (t.ElapsedMilliseconds < 400)
+					if (t.ElapsedMilliseconds < 100)
 						continue;
 					t.Restart();
 					Position tail = new Position(win.list.First());
@@ -71,6 +73,11 @@ namespace SnakeMess
 							newH.x -= 1;
 							break;
 					}
+
+                    
+
+
+                    /*
 					if (newH.x < 0 || newH.x >= win.BoardW)
 						dead = true;
 					else if (newH.y < 0 || newH.y >= win.BoardH)
@@ -136,7 +143,7 @@ namespace SnakeMess
                             Console.SetCursorPosition(pos.x, pos.y);
                             Console.Write("$");
 							inUse = false;
-						}
+						}*/
 
 						win.list.Add(newH);
 						Console.ForegroundColor = ConsoleColor.Yellow;
@@ -148,4 +155,3 @@ namespace SnakeMess
 			}
 		}
 	}
-}
