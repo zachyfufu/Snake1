@@ -13,7 +13,8 @@ namespace SnakeMess
 		public static void Main(string[] arguments)
 		{
             Console.Title = "Westerdals Oslo ACT - SNAKE";
-            bool dead = false, pause = false, inUse = false;
+            bool dead = false;
+            bool pause = false, inUse = false;
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
            
@@ -27,6 +28,7 @@ namespace SnakeMess
             snake.Add(new Position(10, 10));
             snake.Add(new Position(10, 10));
             snake.Add(new Position(10, 10));
+
 
 			Console.CursorVisible = false;
             
