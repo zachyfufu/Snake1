@@ -5,9 +5,9 @@ using System.Text;
 
 namespace SnakeMess
 {
-    class Window
+    class Window : Position
     {
-        Position pos = new Position();
+        
         public List<Position> list;
 
 
@@ -15,7 +15,8 @@ namespace SnakeMess
         { get; set; } = Console.WindowWidth;
 
 
-        S
+        
+
 
         public int BoardH
         { get; set; } = Console.WindowHeight;
@@ -38,7 +39,7 @@ namespace SnakeMess
 
                 bool food = true;
                 foreach (Position i in list)
-                    if (i.x == pos.x && i.y == pos.y)
+                    if (i.x == x && i.y == y)
                     {
                         food = false;
                         break;
@@ -46,7 +47,7 @@ namespace SnakeMess
                 if (food)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.SetCursorPosition(pos.x, pos.y);
+                    Console.SetCursorPosition(x, y);
                     Console.Write("$");
                     break;
                 }

@@ -20,15 +20,12 @@ namespace SnakeMess
 			short newDir = 2; // 0 = up, 1 = right, 2 = down, 3 = left
 			short last = newDir;
            
-
             Window win = new Window();
             Position pos = new Position();
-
-
-          
-			Console.CursorVisible = false;
-            
             Random rnd = new Random();
+
+            Console.CursorVisible = false;
+            
             win.Snake();
             win.Food();
 
