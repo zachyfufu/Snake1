@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
+    <Compile Include="win.cs" />
+    <Compile Include="Position.cs" />
+    <Compile Include="Snake.cs" />
     <Compile Include="end.cs" />
+    <Compile Include="Food.cs" />
     <Compile Include="SnakeMess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
