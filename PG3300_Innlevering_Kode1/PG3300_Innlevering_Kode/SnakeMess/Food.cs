@@ -12,21 +12,26 @@ namespace SnakeMess
         {
             Random rnd = new Random();
             Snk();
+
+            
+
             while (true)
             {
+                x = rnd.Next(0, Console.WindowWidth);
+                y = rnd.Next(0, Console.WindowHeight);
 
 
                 bool food = true;
                 foreach (Position i in list)
                     if (i.x == x && i.y == y)
                     {
-                        food = false;
+                        food = true;
                         break;
                     }
                 if (food)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.SetCursorPosition(x, y);
+                    Console.SetCursorPosition(y, x);
                     Console.Write("$");
                     break;
                 }
@@ -34,8 +39,6 @@ namespace SnakeMess
             }
 
         }
-
-
-
+       
     }
 }

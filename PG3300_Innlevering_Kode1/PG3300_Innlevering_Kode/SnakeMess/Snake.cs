@@ -43,7 +43,7 @@ namespace SnakeMess
 
                 if (!pause)
                 {
-                    if (t.ElapsedMilliseconds < 150)
+                    if (t.ElapsedMilliseconds < 75)
                         continue;
                     t.Restart();
                     Position tail = new Position(list.First());
@@ -130,7 +130,7 @@ namespace SnakeMess
                         {
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.SetCursorPosition(x, y);
-                            Console.Write("!");
+                            Console.Write("$");
                             inUse = false;
                         }
 

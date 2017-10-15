@@ -14,7 +14,6 @@ namespace SnakeMess
 
         public static void Main(string[] arguments)
 		{
-            Console.Title = ("Westerdals Oslo ACT - SNAKE");
             Window win = new Window();
             win.createSnake();
             win.createFood();

@@ -32,6 +32,8 @@ namespace SnakeMess
         public int BoardH
         { get; set; } = Console.WindowHeight;
 
+
+
         
     
 
