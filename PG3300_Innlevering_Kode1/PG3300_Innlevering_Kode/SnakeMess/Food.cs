@@ -7,12 +7,14 @@ namespace SnakeMess
 {
     class Food : Position
     {
-        
+
         public void Mat()
         {
+            Random rnd = new Random();
             Snk();
             while (true)
             {
+
 
                 bool food = true;
                 foreach (Position i in list)
@@ -28,8 +30,12 @@ namespace SnakeMess
                     Console.Write("$");
                     break;
                 }
+
             }
 
         }
+
+
+
     }
 }

@@ -8,22 +8,17 @@ namespace SnakeMess
 {
 	
 
-	class SnakeMess
+	class MainMethod
 	{
 
 
         public static void Main(string[] arguments)
 		{
-            Console.Title = "Westerdals Oslo ACT - SNAKE";
-
-			
-            
+            Console.Title = ("Westerdals Oslo ACT - SNAKE");
             Window win = new Window();
             win.createSnake();
             win.createFood();
  
-            
-
 
 			
 		}
